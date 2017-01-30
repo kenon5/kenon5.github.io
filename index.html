@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style> 
+    #grad {
+    background: #FCDC3B; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#FCDC3B, #C5C1AA); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FCDC3B, #C5C1AA); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FCDC3B,#C5C1AA); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FCDC3B, #C5C1AA); /* Standard syntax */
+}
+
+body {
+	cursor: url("http://media.tumblr.com/tumblr_lqs4osv61Z1qfoi4t.png"), default;
+}
+
+#toptitle {
+	color: black;
+	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 70px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding-top: 50px;
+}
+
+#tophead {
+	color: black;
+	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 70px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding-top: 200px;
+}
+
+#aboutme {
+	color: black;
+	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding-top: 200px;
+}
+
+#scratchHead {
+	color: black;
+	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 30px;
+	/*padding-top: 500px;*/
+	padding-top: 30px;
+}
+
+#scratch {
+	color: black;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding-top: 50px;
+}
+
+#pythonHead {
+	color: black;
+	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 30px;
+	/*padding-top: 500px;*/
+	padding-top: 30px;
+}
+
+#python {
+	color: black;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding-top: 50px;
+}
+
+a:link {
+	color:#faebd7;
+	text-decoration: none;
+}
+
+a:visited {
+	color:#faebd7;
+	text-decoration: none;
+}
+
+a:hover {
+	color:none;
+	text-decoration: none;
+}
+
+a:active {
+	color:none;
+	text-decoration: none;
+}
+
+
+
+#hidden {
+	color:transparent;
+}
+
+.button {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	width: auto;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+	padding: 10px;
+	color: black;
+	background: transparent;
+}
+
+/*.container {
+	padding: 20px;
+}
+.sliderWrap {
+	overflow: hidden;
+	position: relative;
+	top: auto;
+}
+#imageSlider {
+	position: relative;
+	height: auto;
+	list-style: none;
+	overflow: hidden;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+}
+#imageSlider li {
+	position: relative;
+	float: left;
+}
+.navi {
+	position: absolute;
+	top: 120px;
+	height: 50px;
+	width: 30px;
+	opacity: 0.6;
+}
+.navi:hover {
+	opacity: 0.9;
+}
+#prev {
+	background: #000;
+	url("obama1.jpg") no-repeat center;
+	right: 0px;
+}
+#next {
+	background: #000;
+	url("obama2.jpg") no-repeat center;
+	right: 0px;
+}*/
+	</style>
+    <script>
+    window.onload = setTimeout(function() { alert("I'm glad you decided to visit my page!"); },1000);
+
+function hoverBigger() {
+	var hovered = document.getElementById("hovering");
+	hovered.width = 576;
+	hovered.height = 324;
+}
+
+function hoverNorm() {
+	var hoverBye = document.getElementById("hovering");
+	hoverBye.width = 192;
+	hoverBye.height = 108;
+}
+
+function moreabout() {
+	var aboutmethings = document.getElementById("aboutme");
+	aboutmethings.innerHTML = "I'm a recently divorced woman. Don't worry, I'm not that old! I wanted to help create Fictional Feminists because I was afraid that there are women out there who are in the same situation I was."
+}
+
+window.smoothScrollTo = (function () {
+  var timer, start, factor;
+  
+  return function (target, duration) {
+    var offset = window.pageYOffset,
+        delta  = target - window.pageYOffset; // Y-offset difference
+    duration = duration || 1000;              // default 1 sec animation
+    start = Date.now();                       // get start time
+    factor = 0;
+    
+    if( timer ) {
+      clearInterval(timer); // stop any running animations
+    }
+    
+    function step() {
+      var y;
+      factor = (Date.now() - start) / duration; // get interpolation factor
+      if( factor >= 1 ) {
+        clearInterval(timer); // stop animation
+        factor = 1;           // clip to max 1.0
+      } 
+      y = factor * delta + offset;
+      window.scrollBy(0, y - window.pageYOffset);
+    }
+    
+    timer = setInterval(step, 10);
+    return timer;
+  }
+}())
+
+// window.smoothScroll = function(target) {
+// 	var scrollContainer = target;
+// 	do {
+// 		scrollContainer = scrollContainer.parentNode;
+// 		if (!scrollContainer) return;
+// 		scrollContainer.scrollTop += 1;
+// 	}
+// 	while (scrollContainer.scrollTop == 0);;
+
+// 	var targetY = 0;
+// 	do {
+// 		if (target == scrollContainer) break;
+// 		targetY += target.offsetTop;
+// 	}
+// 	while (target = target.offsetParent);
+
+// 	scroll = function(c,a,b,i) {
+// 		i++, if (i > 30) return;
+// 		c.scrollTop = a + (b-a) / 30 * i;
+// 		setTimeOut(function(){scroll(c,a,b,i);}, 20);
+// 	}
+// 	scroll(scrollContainer,scrollContainer.scrollTop, targetY, 0)
+// }// JavaScript Document
+	</script>
+	<link rel="stylesheet" type="text/css" href="../nkenon.github.io/styling.css">
+	<link href="../nkenon.github.io/CSS-WEB1.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../nkenon.github.io/scripting.js"></script>
+	<title> Nora's Page</title>
+
+</head>
+
+<body id="grad">
+
+	<div id="tophead">Nora</div>
+
+	<br>
+	<br>
+
+	<!-- <center><div class="button"><a href="#hidden">Who is she?</a></div></center> -->
+	<center><input class="button" type="button" value="Who am I?" onclick="smoothScrollTo(document.getElementById('hidden').offsetTop)"></center>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="hidden">hi</div>
+	<br>
+	<br>
+	<br>
+
+	<div id="aboutme" onmousedown="moreabout()">So you're interested in me huh?. Click here!</div>
+
+	<br>
+
+	<!-- <center><div class="button"><a href="#scratching">See some projects</a></div></center> -->
+	
+
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="scratchHead"><a name="scratching"></a></div>
+	<div id="scratch">
+		<ul>
+			<center><a href="Nora.jpg"><img id="hovering" src="Nora.jpg" title="Nora" alt="A picture of my ex husband's house!" height="300" width="300"> </a></center>
+			<br>
+			
+			<center><a>If anyone who knows me sees me talking about a feminist group, they'd probably freak out. This is a far cry from how I was when I was still living with my Ex-Husband. I've grown up. Although I chose to leave my kids with my ex, I still kind of miss them. (I'm not as strong as Medea when it comes to that.) I don't believe they were holding me back. I am certain that he can give them a better life. (I don't make the kind of dough that he makes.) Nevertheless, I'm happy with my decision to leave. My Ex wanted me to say innocent and never treated me as his equal. I was like his showdog. He refused to let me help and didn't like it when I tried to find my own purpose. I hope that every fictional gal who has been through manipulation can join our group. We can fight this problem! </a></center>
+<br>
+<br>
+<br>
+	<!-- <center><div class="button"><a href="#top">Go back to top</a></div></center> -->
+	<center><input class="button" type="button" value="Go back to top" onclick="smoothScrollTo(document.getElementById('tophead').offsetTop)"></center>
+
+ 	<br>
+	<br>
+	<br>
+
+</body>
+
+</html>
+
